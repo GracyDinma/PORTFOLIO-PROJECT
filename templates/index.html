@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Find, buy, or rent your dream home with HaVen. Discover an intuitive real estate platform for all your housing needs." />
+        <link rel="stylesheet" href="css/style.css" />
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
+            />
+        <title>Haven</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div class="navbar">
+                    <div class="icon">
+                        <h2 class="logo">HaVen</h2>
+                    </div>
+                    <nav>
+                        <div class="btn">
+                            <i class="fa fa-times close-btn"></i>
+                        </div>
+                        <ul>
+                            <li><a href="#home" aria-current="page">Home</a></li>
+                            <li><a href="#about">About</a></li>
+        
+                            <li class="dropdown">
+                                <a href="#features" class="dropbtn">Features</a>
+                                <div class="dropdown-content">
+                                    <a href="#rent">Rent a home</a>
+                                    <a href="#">Sell a home</a>
+                                    <a href="#">Buy a home</a>
+                                </div>
+                            </li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><button class="sign-in-btn">Sign In</button></li>
+                            <li><button class="sign-up-btn">Sign Up</button></li>
+                        </ul>
+                    </nav>
+                    <div class="btn">
+                        <i class="fa fa-bars menu-btn"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="home">
+            <img src="Bg.jpg" alt="Beautiful house" class="background-image">
+            <div class="container">
+                <div class="content">
+                    <h2>Your Dream Home Awaits</h2>
+                    <p>Find, buy, or rent the perfect home for you and your family.</p>
+                    <button onclick="window.location.href='https://your-deployed-project-url.com'">Explore More</button>
+                    <div class="social_icons">
+                        <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="#" aria-label="Github"><i class="fa fa-github"></i></a>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Haven</h2>
+                <p>
+                    This project was born out of a passion for creating an intuitive real estate platform that help people navigate through their desired homes without been robbed by greedy agents.
+                </p>
+                <p>
+                    This is also a portfolio project for <a href="https://www.holbertonschool.com" target="_blank" rel="noopener noreferrer">Holberton School</a>, which provided the perfect opportunity to develop and refine my skills in web development.
+                </p>
+            </div>
+        </section>
+        <section id="features">
+                <div class="container">
+                    <h2>Key Features</h2>
+                    <div class="features-grid">
+                        <div class="feature">
+                            <a href="sell.html" class="feature-link">
+                                <img src="Sell.jpeg" alt="Picture of selling banner" class="feature-image">
+                                <h3>Sell a home</h3>
+                            </a>
+                            <p>No matter what path you choose to sell your home, we can hold your hands to a successful sale.</p>
+                        </div>
+                        <div class="feature">
+                            <a href="buy.html" class="feature-link">
+                                <img src="Buy.jpeg" alt="House and a key" class="feature-image">
+                                <h3>Buy a home</h3>
+                            </a>
+                            <p>Find your place with an exciting photo experience and the most listings, including thing's you won't find anywhere else.</p>
+                        </div>
+                        <div class="feature">
+                            <a href="rent.html" class="feature-link">
+                                <img src="Rent.jpeg" alt="House with rent description" class="feature-image">
+                                <h3>Rent a home</h3>
+                            </a>
+                            
+                            <p>We're creating a seamless online experience - from shopping on the largest rental network, to applying, to paying rent.</p>
+                        </div>
+                </div>
+                </div>
+    </section>
+    
+        </div>
+        
+        <section id="contact">
+            <div class="container">
+                <h2>Contact US</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>We'd love to hear from you! Whether you have questions about our services or just want to say hello, feel free to reach out to us.</p>
+                        <ul>
+                            <li><strong>Address:</strong> 25 Onyekachi Street, Enugu, Nigeria</li>
+                            <li><strong>Phone:</strong> +(234) 810-717-2525</li>
+                            <li><strong>Email:</strong> <a href="mailto:okohagchidinma@gmail.com">okohagchidinma@gmail.com</a></li>
+                        </ul>
+                        <div id="map" style="height: 300px; width: 100%";></div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign In/Sign Up Modal -->
+         <div id="authModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="authForms">
+
+                    <!-- Sign In Form -->
+                    <div id="signInForm">
+                    <h2>Sign In</h2>
+                    <form>
+                        <label for="sign-in-email">Email:</label>
+                        <input type="email" id="sign-in-email" name="email" required>
+                        <label for="sign-in-password">Password:</label>
+                        <input type="password" id="sign-in-password" name="password" required>
+                        <button type="submit">Sign In</button>
+                    </form>
+                    <p>Don't have an account? <a href="#" class="toggle">Sign Up</a></p>
+                </div>
+
+                <!-- Sign Up Form -->
+                <div id="signUpForm" class="hidden">
+                    <h2>Sign Up</h2>
+                    <form>
+                        <label for="sign-up-email">Email:</label>
+                        <input type="email" id="sign-up-email" name="email" required>
+                        <label for="sign-up-password">Password:</label>
+                        <input type="password" id="sign-up-password" name="password" required>
+                        <label for="sign-up-confirm-password">Confirm Password:</label>
+                        <input type="password" id="sign-up-confirm-password" name="confirm-password" required>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <p>Already have an account? <a href="#" class="toggle">Sign In</a></p>
+                </div>
+            </div>
+         </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
