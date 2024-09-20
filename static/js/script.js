@@ -13,20 +13,15 @@ document.addEventListener('DOMContentLoaded',function(){
         closeBtn.addEventListener('click',() => menu.classList.remove('active'));
     }
         
-    // Show/hide the modal
-    const showModal = (show) =>{
-        if (show){
-            authModal.classList.add('show');
-        } else{
-            authModal.classList.remove('show');
-        }
-        
+    // Toggle modal visibility
+    const toggleModal = (show) =>{
+        authModal.classList.toggle('show', show);
     };
     
     // Show sign-in or sign-up form in the modal
     document.querySelectorAll('.sign-in-btn, .sign-up-btn').forEach(btn =>{
         btn.addEventListener('click', (e) =>{
-            showModal(true);
+            toggleModal(true);
             const isSignIn = e.target.classList.contains('sign-in-btn');
             document.getElementById('signInForm').style.display = isSignIn ? 'block' : 'none';
             document.getElementById('signUpForm').style.display = isSignIn ? 'none' : 'block';
@@ -34,10 +29,10 @@ document.addEventListener('DOMContentLoaded',function(){
     });
 
     if (closeModal){
-        closeModal.addEventListener('click', () => showModal(false));
+        closeModal.addEventListener('click', () => toggleModal(false));
         window.addEventListener('click',(event) =>{
             if (event.target === authModal){
-                showModal(false);
+                toggleModal(false);
             }
         });
     }
@@ -65,34 +60,15 @@ document.addEventListener('DOMContentLoaded',function(){
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
-        });
-    });
-
-    // Ensure dropdown links scroll smoothly to sections
-    document.querySelectorAll('.dropdown-content a[href^="#"]').forEach(anchor =>{
-        anchor.addEventListener('click',function(e){
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
-
-            // Close the dropdown menu after selection
-            const dropdown = this.closest('.dropdown');
-            if (dropdown){
-                dropdown.querySelector('.dropdown-content').classList.remove('show');
-            }
-
-            // Close the mobile menu after selection
             if (menu.classList.contains('active')){
-                menu.classList.remove('active');
+                menu.classList.remove('active'); // Close the mobile menu
             }
         });
     });
 
-    // Google Maps API initialiazation
+    // Google Maps API initialization
     function initMap(){
-        const location = {lat: 40.748817, lng: -73.985428};
+        const location = { lat: 40.748817, lng: -73.985428 };
         const map = new google.maps.Map(document.getElementById('map'),{
             zoom: 14,
             center: location,
@@ -113,13 +89,13 @@ document.addEventListener('DOMContentLoaded',function(){
         script.async = true;
         document.head.appendChild(script);
     }
+    
+    // Load Google Maps script on page load
+    loadMapScript(); 
 
-    // Call loadMapScript when DOM content is loaded
-    document.addEventListener('DOMContentLoaded', loadMapScript);
-
-    // Contact-Form handling
-    document.addEventListener('DOMContentLoaded', () =>{
-        const form = document.getElementById('contactForm');
+    // Contact form handling
+    const form = document.getElementById('contactForm');
+    if (form){
         form.addEventListener('submit', (event) =>{
             event.preventDefault();
 
@@ -137,5 +113,5 @@ document.addEventListener('DOMContentLoaded',function(){
                 alert('Please fill out all fields.');
             }
         });
-    });
+    }
 });
